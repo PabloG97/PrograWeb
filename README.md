@@ -6,12 +6,12 @@ _Creación de la base de desarrollo para los trabajos de progra web_
 _La estructura base contiene los siguientes archivos_
 
 * _dist_:
- * _css_
-  * style.css  
- * index.html
+  * _css_
+    * style.css  
+  * index.html
 * _src_:
- * scss
-  * Todos los archivos scss utilizados para el proyecto
+  * scss
+    * Todos los archivos scss utilizados para el proyecto
 * gulpfile.js
 * package.json
 * package-lock.json
