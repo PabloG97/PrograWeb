@@ -3,7 +3,8 @@ _Creación de la base de desarrollo para los trabajos de progra web_
 
 ### Estructura base 📦
 
-_La estructura base contiene los siguientes archivos_
+La estructura incluye un proyecto web de aplicación de página única, con la cual se maneja estilos, scripts y maquetación HTML.
+La estructura base contiene los siguientes archivos y _directorios_ 
 
 * _dist_:
   * _css_
