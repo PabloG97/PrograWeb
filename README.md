@@ -8,7 +8,9 @@ La estructura base contiene los siguientes archivos y _directorios_
 
 * _dist_:
   * _css_
-    * style.css  
+    * Archivos css 
+  * _js_
+    * Archivos js 
   * index.html
 * _src_:
   * scss
@@ -31,6 +33,7 @@ npm install
 * Compilación automática del código cuando se realice y guarde un cambio en el mismo.
 * Actualización automática de la página web en el navegador cuando se guarde un cambio en el código.
 * Compilación de estilos.
+* Minifica archivos css y js de forma automática
 
 ---
 [Pablo Girón](https://github.com/PabloG97) 😊

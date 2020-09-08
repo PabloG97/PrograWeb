@@ -4,12 +4,21 @@ const { src, dest, series, parallel, watch } = require('gulp');
 // Importar paquetes
 const sass = require('gulp-sass');
 const browserSync = require('browser-sync').create();
+const minifycss = require('gulp-minify-css');
+
+const gulp = require("gulp");
+
+const { reload } = require('browser-sync');
+
+const concat = require('gulp-concat');
+
 
 //Constantes de trabajo
 const files = {
     scssPath: 'src/scss/**/*.scss',
     htmlPath: 'dist/**/*.html',
-    jsPath: ''
+    jsPath: 'dist/**/*.js',
+    cssPath: 'dist/**/*.css'
 }
 
 function holaMundoTarea(done) {
@@ -18,7 +27,7 @@ function holaMundoTarea(done) {
 }
 
 /**
- * Compila los archivos sass en estilo cascada (CSS)
+ * Compila los archivos sass en  (CSS)
  */
 function scssTask() {
     return src(files.scssPath)
@@ -50,4 +59,24 @@ function reloadTask(d) {
     d();
 }
 
-exports.default = series(scssTask, serveTask, watchTask);
+/* 
+ * Minificación de archivos CSS
+ */
+function minifycssTask(d) {
+    return src(files.cssPath)
+        .pipe(concat('minificado.css'))
+        .pipe(minifycss())
+        .pipe(dest('dist/css/'))
+}
+
+/**
+ * Minificación de archivos js
+ */
+function minifyjsTask(d) {
+    return src(files.jsPath)
+        .pipe(concat('minificado.js'))
+        .pipe(uglify())
+        .pipe(dest('dist/js/'))
+}
+
+exports.default = series(scssTask, minifycssTask, serveTask, watchTask);
