@@ -1,0 +1,121 @@
+    body {
+        background-color: $white;
+    }
+    
+    h2,
+    h3,
+    h4 {
+        font-family: $main-font;
+        color: $dark;
+    }
+    
+    section {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+    
+    .banner-principal {
+        background-color: #f4acb7;
+        height: 300px;
+    }
+    
+    .text-center {
+        text-align: center;
+    }
+    
+    #portafolio {
+        background-color: $little-pink;
+        .row {
+            margin-bottom: 25px;
+        }
+        .item-portafolio {
+            background-color: $white;
+            border: 1px solid $dark-gray;
+            p {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+            &:hover {
+                transform: translateY(-15px);
+                box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
+                transition: all 0.25s;
+            }
+        }
+        img {
+            max-width: 100%;
+        }
+    }
+    
+    #equipo {
+        background-color: #ffcad4;
+        padding-left: 15px;
+        padding-right: 15px;
+        .row {
+            margin-bottom: 5px;
+        }
+        .item-equipo {
+            background-color: #fdc7d1;
+        }
+        img {
+            max-width: 100%;
+            max-height: 180px;
+            border-radius: 100px;
+            border: 3px solid $dark-gray;
+        }
+        a img {
+            border: none;
+            border-radius: 1px;
+        }
+        h4 {
+            margin-bottom: 0px;
+            font-size: 40px;
+        }
+        h5 {
+            margin-top: 0px;
+            margin-bottom: 0px;
+            font-size: 25px;
+            color: $dark-gray;
+        }
+    }
+    
+    #clientes {
+        background-color: $little-pink;
+        img {
+            max-width: 100%;
+        }
+    }
+    
+    .redes-sociales {
+        a {
+            border-radius: 10%;
+            color: $white;
+            margin-bottom: 10px;
+            margin-right: 7px;
+            text-decoration: none;
+            display: inline-block;
+            width: 22px;
+            &:hover {
+                background: #ffcbf2;
+            }
+        }
+    }
+    
+    footer {
+        padding: 30px;
+        background-color: $footer-color;
+        .social-links {
+            a {
+                border-radius: 50%;
+                color: $white;
+                background: $dark-pink;
+                text-decoration: none;
+                padding: 10px;
+                display: inline-block;
+                width: 22px;
+                &:hover {
+                    background: #ffcbf2;
+                    color: black;
+                }
+            }
+        }
+    }

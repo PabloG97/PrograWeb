@@ -1,42 +1,35 @@
-// Importar funciones a la API de gulp
+//Funciones específicas  de la API de gulp
 const { src, dest, series, parallel, watch } = require('gulp');
 
-// Importar paquetes
+//Paquetes
+const gulp = require("gulp");
 const sass = require('gulp-sass');
+const { reload } = require('browser-sync');
 const browserSync = require('browser-sync').create();
+const concat = require('gulp-concat');
+const uglify = require('gulp-uglify');
 const minifycss = require('gulp-minify-css');
 
-const gulp = require("gulp");
-
-const { reload } = require('browser-sync');
-
-const concat = require('gulp-concat');
-
-
-//Constantes de trabajo
+//Constante de trabajo
 const files = {
     scssPath: 'src/scss/**/*.scss',
     htmlPath: 'dist/**/*.html',
-    jsPath: 'dist/**/*.js',
-    cssPath: 'dist/**/*.css'
-}
-
-function holaMundoTarea(done) {
-    console.log("Holi");
-    done();
+    cssPath: 'dist/**/*.css',
+    jsPath: 'src/**/*.js'
 }
 
 /**
- * Compila los archivos sass en  (CSS)
+ * Compilar los archivos de sass en estios en cascada para el navegador (CSS)
  */
-function scssTask() {
+
+function scssTask(d) {
     return src(files.scssPath)
         .pipe(sass())
-        .pipe(dest('dist/css'));
+        .pipe(dest('dist/css'))
 }
 
 /**
- * Observa los cambios en archivos sass y los compila automáticamente
+ * Observar cambios en los archivos de sass para compilar automáticamente
  */
 function watchTask() {
     watch(
@@ -45,6 +38,9 @@ function watchTask() {
     )
 }
 
+/**
+ * Sirve archivos automáticamente en navegador
+ */
 function serveTask(d) {
     browserSync.init({
         server: {
@@ -54,19 +50,22 @@ function serveTask(d) {
     d();
 }
 
+/**
+ * Actualización de cambios en tiempo real en el navegador
+ */
 function reloadTask(d) {
     browserSync.reload();
     d();
 }
 
-/* 
+/**
  * Minificación de archivos CSS
  */
 function minifycssTask(d) {
     return src(files.cssPath)
-        .pipe(concat('minificado.css'))
+        .pipe(concat('app.css'))
         .pipe(minifycss())
-        .pipe(dest('dist/css/'))
+        .pipe(dest('build/cssminify/'))
 }
 
 /**
@@ -74,9 +73,9 @@ function minifycssTask(d) {
  */
 function minifyjsTask(d) {
     return src(files.jsPath)
-        .pipe(concat('minificado.js'))
+        .pipe(concat('app.js'))
         .pipe(uglify())
-        .pipe(dest('dist/js/'))
+        .pipe(dest('build/jsminify/'))
 }
 
-exports.default = series(scssTask, minifycssTask, serveTask, watchTask);
+exports.default = series(scssTask, minifycssTask, minifyjsTask, serveTask, watchTask);
