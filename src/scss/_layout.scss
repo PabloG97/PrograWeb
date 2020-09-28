@@ -16,7 +16,55 @@
     
     .banner-principal {
         background-color: #f4acb7;
-        height: 300px;
+        height: 350px;
+        background-image: url('/img/TeseliaN2B2.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        .header-container {
+            color: white;
+            background-color: rgba(0, 0, 0, 0.50);
+            height: calc(100% - 130px);
+            padding: 65px;
+            position: relative;
+            width: calc(100% - 130px);
+        }
+        .header-content {
+            position: absolute;
+            //transform: translateX(-50);
+            top: 40%;
+            left: 50px;
+            p {
+                margin: 0;
+            }
+        }
+    }
+    
+    nav {
+        ul {
+            background-color: #f68899;
+            border-bottom: 1px solid #f4acb7;
+            margin: 0;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            top: 0;
+            li {
+                display: inline-block;
+                list-style: none;
+                //float: right;
+                margin: 20px;
+                a {
+                    color: #8d3142;
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    &:hover {
+                        color: #31010a;
+                    }
+                }
+            }
+        }
     }
     
     .text-center {
@@ -117,5 +165,6 @@
                     color: black;
                 }
             }
+            @media screen and (max-width: 245px) {}
         }
     }

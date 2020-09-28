@@ -785,7 +785,44 @@ section {
 
 .banner-principal {
   background-color: #f4acb7;
-  height: 300px; }
+  height: 350px;
+  background-image: url("/img/TeseliaN2B2.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover; }
+  .banner-principal .header-container {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    height: calc(100% - 130px);
+    padding: 65px;
+    position: relative;
+    width: calc(100% - 130px); }
+  .banner-principal .header-content {
+    position: absolute;
+    top: 40%;
+    left: 50px; }
+    .banner-principal .header-content p {
+      margin: 0; }
+
+nav ul {
+  background-color: #f68899;
+  border-bottom: 1px solid #f4acb7;
+  margin: 0;
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  top: 0; }
+  nav ul li {
+    display: inline-block;
+    list-style: none;
+    margin: 20px; }
+    nav ul li a {
+      color: #8d3142;
+      text-decoration: none;
+      text-transform: uppercase; }
+      nav ul li a:hover {
+        color: #31010a; }
 
 .text-center {
   text-align: center; }
